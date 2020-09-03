@@ -1,0 +1,74 @@
+Manual de Usuario:
+
+Descripción: 	El programa presentado, se realizó tomando en cuenta la problematica que se presenta en cada persona
+	     	que no tiene conocimientos sobre los lenguajes de señas o la escritura Braille, dichos idiomas
+	     	son utilizados por personas que poseen una discapacidad (ya sea auditiva o visual), por esto mismo
+	     	se desarrolló un programa que por medio de imagenes representa los textos que se desean traducir a
+	     	los dos posibles lenguajes
+	     	NOTA: Se avisa que el programa solo fue hecho con la intención de traducir letra
+	     	por letra cada palabra del abecedario, no incluye todas las frases completas existentes.
+
+Menu Príncipal: 	Al ejecutar el programa, se abre el menú príncipal la cual ofrece la posibilidad de accionar dos botones 
+		("Señas" y "Braille"), estos botones redirigen a las ventanas correspondientes segun la opción que se 
+		escoja, ya sea "Señas" o "Braille" y seguido a eso, cierra el menú príncipal.
+
+Ventana de Señas: 	Al seleccionar la opción de "Señas", se despliega la ventada de señas, la cual cuenta con un titulo, tres
+		barras de texto definido, un area de texto, un panel de texto y 4 botones. 
+		
+		Area de Texto = 	Este cuadro será usado unicamente para digitar el texto que se desea traducir, hay 
+				que tener en cuenta que el traductor solo tiene la capacidad de traducir letras, por
+				lo tanto se recomienda evitar el uso de caracteres especiales y numeros, ya que 
+				no se tuvó en cuenta estos caracteres a la hora de realizar la traducción.
+		
+		Panel de Texto =	En este panel, se visualizan las imagenes que representan las palabras digitadas 
+				en el area de texto, el uso de espaciado, salto de linea o tabulación, realizan un 
+				salto de linea en el panel de texto, por lo cual para la visualización total de 
+				las traducciones se deberá hacer uso de los "Scrolls" o barras de desplazamiento
+				según el largor de cada palabra y la cantidad de palabras, será el recorrido que se
+				deberá realizar por medio de los "Scrolls".
+		
+		Boton Traducir   =	La acción que realiza este boton es tomar el texto del "Area de Texto" y consultar
+				la representacion grafica de dicho texto.	 
+
+		Boton Regresar    = La acción que realiza este boton es devolverse al menú principal.
+		
+		Boton Braille       =	La acción que realiza este boton es enviar la información del "Area de Texto" hacia la
+				ventana de Braille para traducir a escritura Braille los textos que se digitaron.
+		
+		Boton Salir         =	La acción de este boton es cerrar todo el próceso que esta ejecutando el programa
+				y acabar con la ejecución del mismo.	
+
+Ventana Braille: 	Al seleccionar la opción de "Braille", se despliega la ventada braille, la cual cuenta con un titulo, tres
+		barras de texto definido, un area de texto, un panel de texto y 4 botones. 
+		
+		Area de Texto = 	Este cuadro será usado unicamente para digitar el texto que se desea traducir, hay 
+				que tener en cuenta que el traductor solo tiene la capacidad de traducir letras, por
+				lo tanto se recomienda evitar el uso de caracteres especiales (incluso usar la ñ), ya que 
+				no se tuvó en cuenta estos caracteres a la hora de realizar la traducción.
+		
+		Panel de Texto =	En este panel, se visualizan las imagenes que representan las palabras digitadas 
+				en el area de texto, el uso de espaciado, salto de linea o tabulación, realizan un 
+				salto de linea en el panel de texto, por lo cual para la visualización total de 
+				las traducciones se deberá hacer uso de los "Scrolls" o barras de desplazamiento,
+				según el largor de cada palabra y la cantidad de palabras, será el recorrido que se
+				deberá realizar por medio de los "Scrolls".
+		
+		Boton Traducir   =	La acción que realiza este boton es tomar el texto del "Area de Texto" y consultar
+				la representacion grafica de dicho texto, para entender la traducción solo se debe
+				tener en cuenta los ciculos coloreados en verde de cada imagen.	 
+
+		Boton Regresar   = 	La acción que realiza este boton es devolverse al menú principal.
+		
+		Boton Señas       =	La acción que realiza este boton es enviar la información del "Area de Texto" hacia la
+				ventana de Señas para traducir a lenguaje de señas los textos que se digitaron.
+		
+		Boton Salir         =	La acción de este boton es cerrar todo el próceso que esta ejecutando el programa
+				y acabar con la ejecución del mismo.	
+
+Este software se realizó con fines educativos, se reserva los derechos del contenido a sus respectivos autores.
+
+Se prohibe la venta o comercialiación del programa.
+
+Presentado por: 	-Nombre: Luis Alfredo Mejias Valero 	-Cod: 1151839
+		-Nombre: Jeferson Rodriguez	    	-Cod: 11518
+		-Nombre: Sebastian Casadiegos Gomez -cod: 11518
