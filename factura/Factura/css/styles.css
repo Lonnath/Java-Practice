@@ -1,0 +1,115 @@
+body{
+	background-color: #F0F0F0;
+}
+nav{
+	position: relative;
+	top: 20px;
+	left: 20px;
+	width: 700px;
+	height: 300px;
+	border: outset 3px;
+	box-shadow: 0px 0px 10px #D3D3D3;
+	background-color: #F6F7F2;
+}
+section{
+	position: relative;
+	top:50px;
+	left: 20px;
+	width: 700px;
+	height: auto;
+	box-shadow: 0px 0px 10px #D3D3D3;
+	background-color: #F6F7F2;
+	border: inset 2px;
+}
+#tabla{
+	width: 700px;
+	height: auto; 
+	border: inset 1px;
+}
+.columna{
+	border-bottom: outset 1px;
+	width: 100px;
+	height: 40px; 
+}
+.codigo{
+	position: relative;
+	top: 30px;
+	left: 150px;
+
+}
+.cantidad{
+	position: relative;
+	top: 60px;
+	left: 150px;
+}
+#codigo{
+	position: absolute;
+	left: 200px;
+}
+#cantidad{
+	position: absolute;
+	left: 200px;
+}
+#boton{
+	position: absolute;
+	top: 200px;
+	left: 440px;
+}
+aside{
+	position:absolute;
+	left: 70%;
+	top: 400px;
+	width: 250px;
+	height: 120px;
+	border:inset 3px;
+	box-shadow: 0px 0px 10px #D3D3D3;
+	background-color: #F6F7F2;
+}
+.text{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100px;
+	text-align: right;
+}
+.val{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 200px;
+	text-align: right;
+}
+.resultado{
+	position: absolute;
+	right: 50px;
+	top: 0px;
+
+}
+.img{
+	position: absolute;
+	top: 40px;
+	left: 900px;
+	width: 200px;
+	height: 200px;
+}
+footer{
+	position: relative;
+	top: 100px;
+	left:0px;
+	width: 100%;
+	height: 60px;
+	background: #9E9E9E;
+}
+
+.text-footer{
+	position: absolute;
+	top: 20%;
+	left: 2%;
+	color: black;
+	font-family: 'Poppins', sans-serif;
+
+}
+.espaciado{
+	position: relative;
+	height: 69px;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>AJAX</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<nav>
+		<h3>Producto</h3>
+		<form name="form">
+			<p class="codigo">Codigo Producto <input type="number" id="codigo" name="codi"></p>
+			<p class="cantidad">Cantidad <input type="number" id="cantidad" name="canti"></p>
+			<input type="button" value ="enviar" id="boton" onclick="accion(form.codi.value, form.canti.value)">
+		</form>
+	</nav>
+	<section>
+		<h3>Factura</h3>
+
+		<table id="tabla">
+			<thead>
+				<tr>
+					<td class="columna">Codigo</td>
+					<td class="columna">Cantidad</td>
+					<td class="columna">Producto</td>
+					<td class="columna">Precio Unitario</td>
+					<td class="columna">Precio Total</td>
+				</tr>
+			</thead>
+			<tbody id="relleno">
+
+			</tbody>
+
+		</table>
+		<div class="espaciado"></div>
+	</section>
+	<aside>
+		<div class="text">
+			<p>SubTotal:</p>
+			<p>IVA(16%):</p>
+			<p>Total:</p>
+
+		</div>
+		<div class="resultado">
+			<p id="subtotal">0.0</p>
+			<p id="iva">0.0</p>
+			<p id="total">0.0</p>
+		</div>
+		<div class="val">
+			<p>COP</p>
+			<p>COP</p>
+			<p>COP</p>
+		</div>
+	</aside>
+
+	<img src="img/facturero.png" class="img">
+	<footer>
+		<div class="text-footer">Luis Mejias - 2020 - Todos los derechos reservados.   
+		</div>
+	</footer>
+	<script>
+		function loadDoc(codigo, cantidad) {
+			if(codigo==""){
+				alert("Digite un codigo");
+			}else{
+
+				var consulta = new Array();
+				var http = new XMLHttpRequest();
+				http.open("GET","content/stock.txt", false);
+				http.send(null);
+				var stock = http.responseText;
+				var consult = stock.split(";");
+				var bool = 0;
+				var canti = 0;
+				for (var i = 4; i <consult.length; i+=4) {
+					if(parseInt(codigo)==parseInt(consult[i])){
+						if(parseInt(consult[i+1])-parseInt(cantidad)>=0){
+							var valores = [consult[i], consult[i+2], consult[i+3]];
+							facturar(cantidad, valores);
+							bool = 1;
+						}else canti = 1;
+						
+					}
+
+				}
+				if(!canti){
+					if(!bool){
+						alert("Codigo no encontrado");
+					}}else alert("Cantidad Insuficiente");
+				/*consult.forEach(function(dato){
+						console.log(dato);
+			    });
+			    */
+
+			}
+			
+		}
+		function facturar(cantidad, vector){
+			var arreglo = new Array();
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("GET", "content/contenido.html", false);
+			xhttp.send(null);
+			if(xhttp.status==200 && xhttp.readyState==4){	
+				var respuesta = xhttp.responseText;
+				var cadena = respuesta.split(";");
+				cadena.forEach(function(dato){
+					console.log(dato);
+				});
+				cadena[1]+=vector[0];
+				cadena[3]+=cantidad;
+				cadena[5]+=vector[1];
+				cadena[7]+=vector[2];
+				cadena[9]+=parseInt(cantidad)*parseInt(vector[2])+" COP";
+				subTotal(parseInt(cantidad)*parseInt(vector[2]));
+				var salida="";
+				for (var i =0; i<cadena.length; i++){
+					salida+=cadena[i];
+				}
+				document.getElementById("relleno").innerHTML += salida;
+			}else alert("Ocurrio un error al intentar generar la factura, por favor intentelo de nuevo mas tarde.")
+		}
+		function subTotal(llevado){
+			var pla =document.getElementById("subtotal").innerHTML;
+			var plata = parseInt(pla)+parseInt(llevado);
+			document.getElementById("subtotal").innerHTML=plata;
+			iva(plata);
+		}
+		function iva(plata){
+			var iba = (parseInt(plata)*16)/100;
+			document.getElementById("iva").innerHTML = iba;
+			total(plata, iba);
+		}
+		function total(plata, eIba){
+			document.getElementById("total").innerHTML = parseInt(plata)+parseInt(eIba);
+		}
+		function accion(codigo, cantidad){
+			if(cantidad<=0){
+				cantidad = 1;
+			}
+			loadDoc(codigo, cantidad);
+		}
+	</script>
+
+</body>
+
+</html>
